@@ -17,9 +17,9 @@ SensorTag.discoverAll(function(sensorTag) {
 	            sensorTag.on('accelerometerChange', function(x, y, z){
 
 		            function accChange() {
-			            console.log('accX', {accX: x});
-			            console.log('accY', {accY: y});
-			            console.log('accZ', {accZ: z});
+			            document.write('accX', {accX: x});
+			            document.write('accY', {accY: y});
+			            document.write('accZ', {accZ: z});
 		            }; 
 		            accChange();
 	            })
@@ -37,8 +37,8 @@ SensorTag.discoverAll(function(sensorTag) {
 	        	sensorTag.on('irTemperatureChange', function(obj, amb){
 
 	        		function tempChange() {
-	        			console.log('obj', {obj: obj});
-	        			console.log('amb', {amb: amb});
+	        			document.write('obj', {obj: obj});
+	        			document.write('amb', {amb: amb});
 	        		};
 	        		tempChange();
 	        	})
