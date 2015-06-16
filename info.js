@@ -1,6 +1,9 @@
 var SensorTag = require('sensortag');
 
-function onDiscover(sensorTag){
+SensorTag.discoverAll(function onDiscover(sensorTag){
+	sensorTag.connect(function() {
+
+	    sensorTag.discoverServicesAndCharacteristics(function() {
 	sensorTag.readDeviceName(function(error, deviceName){
 		console.log(deviceName);
 	});
@@ -22,6 +25,6 @@ function onDiscover(sensorTag){
 	sensorTag.readManufacturerName(function(error, manufacturerName){
 		console.log(manufacturerName);
 	});
-}
-
-SensorTag.discoverAll(onDiscover);
+});
+});
+});
