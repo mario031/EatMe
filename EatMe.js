@@ -8,61 +8,89 @@ SensorTag.discoverAll(function(sensorTag) {
 	sensorTag.connect(function() {
 
 	    sensorTag.discoverServicesAndCharacteristics(function() {
+	    	sensorTag.readSystemId(function(error, systemId){
+	    		if(systemId == '5c:31:3e:00:00:bf:fc:15') {
+	    			sensorTag.enableAccelerometer(function() {
+	    				sensorTag.setAccelerometerPeriod(5, function() {
+	    				})
 
-	        sensorTag.enableAccelerometer(function() {
-	
-	            sensorTag.setAccelerometerPeriod(5, function() {
-	            })
+	    			sensorTag.on('accelerometerChange', function(x, y, z){
+	    				
+	    				function accChange() {
+		            	exports.accX_1 = x;
+		            	exports.accY_1 = y;
+		            	exports.accZ_1 = z;
+		                };
 
-	            sensorTag.on('accelerometerChange', function(x, y, z){
-
-		            function accChange() {
-		            	exports.accX = x;
-		            	exports.accY = y;
-		            	exports.accZ = z;
-		            }; 
 		            accChange();
-	            })
-	            
-	            sensorTag.notifyAccelerometer(function() {
+		            })
+	    			sensorTag.notifyAccelerometer(function() {
                     console.log("> accelerometer is on");
-                });
-	        });
+                    });
+                    });
+	    			
+	    			sensorTag.enableIrTemperature(function() {
+	    				sensorTag.setIrTemperaturePeriod(5, function() {
+	    				})
 
-	        sensorTag.enableIrTemperature(function() {
+	    				sensorTag.on('irTemperatureChange', function(obj, amb){
 
-	        	sensorTag.setIrTemperaturePeriod(5, function() {
-	        	})
+	    					function tempChange() {
+	    						exports.obj_1 = obj;
+	    						exports.amb_1 = amb;
+	    					};
+	    					tempChange();
+	    				})
 
-	        	sensorTag.on('irTemperatureChange', function(obj, amb){
+	    				sensorTag.notifyIrTemperature(function() {
+	    					console.log("> temperature is on");
+	    				});
+	    			});
+	    		}else{
+	    			console.log("null");
+	    		}
 
-	        		function tempChange() {
-	        			exports.obj = obj;
-	        			exports.amb = amb;
-	        		};
-	        		tempChange();
-	        	})
+	    		if(systemId == '5c:31:3e:00:00:bf:e8:7a') {
+	    			sensorTag.enableAccelerometer(function() {
+	    				sensorTag.setAccelerometerPeriod(5, function() {
+	    				})
 
-	        	sensorTag.notifyIrTemperature(function() {
-	        		console.log("> temperature is on");
-	        	});
-	        });
+	    			sensorTag.on('accelerometerChange', function(x, y, z){
+	    				
+	    				function accChange() {
+		            	exports.accX_2 = x;
+		            	exports.accY_2 = y;
+		            	exports.accZ_2 = z;
+		                };
 
-	        /*sensorTag.on('simpleKeyChange', function(left, right) {
+		            accChange();
+		            })
+	    			sensorTag.notifyAccelerometer(function() {
+                    console.log("> accelerometer is on");
+                    });
+                    });
+	    			
+	    			sensorTag.enableIrTemperature(function() {
+	    				sensorTag.setIrTemperaturePeriod(5, function() {
+	    				})
 
-	        	function buttons() {
-	        		var left = SensorTag.accChange();
-	        	    var right = SensorTag.tempChange();
+	    				sensorTag.on('irTemperatureChange', function(obj, amb){
 
-	        	    //callback(left, right);
-	            };
-	            buttons();	        	
-	        })
+	    					function tempChange() {
+	    						exports.obj_2 = obj;
+	    						exports.amb_2 = amb;
+	    					};
+	    					tempChange();
+	    				})
 
-	        sensorTag.notifySimpleKey(function() {
-	        	console.log("> simpleKey is on");
-	        });*/
-
+	    				sensorTag.notifyIrTemperature(function() {
+	    					console.log("> temperature is on");
+	    				});
+	    			});
+	    		}else{
+	    			console.log("null");
+	    		}
+	    	});
 	    });
-	});
+    });
 });
