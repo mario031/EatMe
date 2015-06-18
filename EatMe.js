@@ -1,4 +1,5 @@
 var SensorTag = require('sensortag');
+var fs = require('fs');
 
 //function onDiscover(sensorTag){
 
@@ -14,30 +15,55 @@ SensorTag.discoverAll(function(sensorTag) {
 	    				sensorTag.setAccelerometerPeriod(5, function() {
 	    				})
 
-	    			sensorTag.on('accelerometerChange', function(x, y, z){
-	    				
-	    				function accChange() {
-		            	console.log("x1 : " + x);
-		            	console.log("y1 : " + y);
-		            	console.log("z1 : " + z);
-		                };
+	    				sensorTag.on('accelerometerChange', function(x, y, z){
+	    					var date = new Date();
+	    					var year = date.getFullYear();
+	    					var month = date.getMonth()+1;
+	    					var day = date.getDate();
+	    					var hour = date.getHours();
+	    					var minute = date.getMinutes();
+	    					var second = date.getSeconds();
+	    					var milisecond = date.getMilliseconds();
+	    					var nowTime = hour + ":" + minute + ":" + second + ":" + milisecond;
+	    					var nowDate = year + "-" + month + "-" + day;
+	    					var accData = nowTime + "," +  x + "," + y + "," +  z + "," + nowDate;
 
-		            accChange();
-		            })
-	    			sensorTag.notifyAccelerometer(function() {
-                    console.log(">SensorTag1 accelerometer is on");
-                    });
-                    });
+
+	    					
+	    					function accChange() {
+	    						fs.writeFile('./csv/accData1.csv', accData);
+	    						//console.log("acc1 log start");
+	    					};
+
+	    					accChange();
+	    				})
+
+	    				sensorTag.notifyAccelerometer(function() {
+	    					console.log(">SensorTag1 accelerometer is on");
+
+	    				});
+	    			});
 	    			
 	    			sensorTag.enableIrTemperature(function() {
 	    				sensorTag.setIrTemperaturePeriod(5, function() {
 	    				})
 
 	    				sensorTag.on('irTemperatureChange', function(obj, amb){
+	    					var date = new Date();
+	    					var year = date.getFullYear();
+	    					var month = date.getMonth()+1;
+	    					var day = date.getDate();
+	    					var hour = date.getHours();
+	    					var minute = date.getMinutes();
+	    					var second = date.getSeconds();
+	    					var milisecond = date.getMilliseconds();
+	    					var nowTime = hour + ":" + minute + ":" + second + ":" + milisecond;
+	    					var nowDate = year + "-" + month + "-" + day;
+	    					var tempData = nowTime + "," + obj + "," + amb + "," + nowDate;
 
 	    					function tempChange() {
-	    						console.log("obj1 : " + obj);
-	    						console.log("amb1 : "  + amb);
+	    						fs.writeFile('./csv/tempData1.csv', tempData);
+	    						//console.log("temp1 log start");
 	    					
 	    				    };
 	    				tempChange();
@@ -56,20 +82,33 @@ SensorTag.discoverAll(function(sensorTag) {
 	    				sensorTag.setAccelerometerPeriod(5, function() {
 	    				})
 
-	    			sensorTag.on('accelerometerChange', function(x, y, z){
-	    				
-	    				function accChange() {
-		            	console.log("x2 : " + x);
-		            	console.log("y2 : " + y);
-		            	console.log("z2 : " + z);
-		                };
+	    				sensorTag.on('accelerometerChange', function(x, y, z){
 
-		            accChange();
-		            })
-	    			sensorTag.notifyAccelerometer(function() {
-                    console.log(">SensorTag2 accelerometer is on");
-                    });
-                    });
+	    					var date = new Date();
+	    					var year = date.getFullYear();
+	    					var month = date.getMonth()+1;
+	    					var day = date.getDate();
+	    					var hour = date.getHours();
+	    					var minute = date.getMinutes();
+	    					var second = date.getSeconds();
+	    					var milisecond = date.getMilliseconds();
+	    					var nowTime = hour + ":" + minute + ":" + second + ":" + milisecond;
+	    					var nowDate = year + "-" + month + "-" + day;
+	    					var accData = nowTime + "," +  x + "," + y + "," +  z + "," + nowDate;
+
+
+	    					
+	    					function accChange() {
+	    						fs.writeFile('./csv/accData2.csv', accData);
+	    						//console.log("acc2 log start");
+	    					};
+
+	    					accChange();
+	    				})
+	    				sensorTag.notifyAccelerometer(function() {
+	    				console.log(">SensorTag2 accelerometer is on");
+	    			});
+	    			});
 	    			
 	    			sensorTag.enableIrTemperature(function() {
 	    				sensorTag.setIrTemperaturePeriod(5, function() {
@@ -77,10 +116,23 @@ SensorTag.discoverAll(function(sensorTag) {
 
 	    				sensorTag.on('irTemperatureChange', function(obj, amb){
 
+	    					var date = new Date();
+	    					var year = date.getFullYear();
+	    					var month = date.getMonth()+1;
+	    					var day = date.getDate();
+	    					var hour = date.getHours();
+	    					var minute = date.getMinutes();
+	    					var second = date.getSeconds();
+	    					var milisecond = date.getMilliseconds();
+	    					var nowTime = hour + ":" + minute + ":" + second + ":" + milisecond;
+	    					var nowDate = year + "-" + month + "-" + day;
+	    					var tempData = nowTime + "," + obj + "," + amb + "," + nowDate;
+
 	    					function tempChange() {
-	    						console.log("obj2 : " + obj);
-	    						console.log("amb2 : " + amb);
-	    					};
+	    						fs.writeFile('./csv/tempData2.csv', tempData);
+	    						//console.log("temp2 log start");
+	    					
+	    				    };
 	    					tempChange();
 	    				})
 
