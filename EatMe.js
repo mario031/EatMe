@@ -6,11 +6,11 @@ var fs = require('fs');
 //}
 
 SensorTag.discoverAll(function(sensorTag) {
-	sensorTag.connect(function() {
+	sensorTag.connect(function(error) {
 
 	    sensorTag.discoverServicesAndCharacteristics(function() {
 	    	sensorTag.readSystemId(function(error, systemId){
-	    		if(systemId == '5c:31:3e:00:00:bf:fc:15') {
+	    		if(systemId == '5c:31:3e:00:00:bf:fc:15' && error == error) {
 	    			sensorTag.enableAccelerometer(function() {
 	    				sensorTag.setAccelerometerPeriod(5, function() {
 	    				})
@@ -26,13 +26,12 @@ SensorTag.discoverAll(function(sensorTag) {
 	    					var milisecond = date.getMilliseconds();
 	    					var nowTime = hour + ":" + minute + ":" + second + ":" + milisecond;
 	    					var nowDate = year + "-" + month + "-" + day;
-	    					var accData = nowTime + "," +  x + "," + y + "," +  z + "," + nowDate;
+	    					var accData = nowTime + "," +  x + "," + y + "," +  z + "," + nowDate + "\n";
 
 
 	    					
 	    					function accChange() {
-	    						fs.writeFile('./csv/accData1.csv', accData);
-	    						//console.log("acc1 log start");
+	    						fs.appendFile('./csv/accData1.csv', accData)
 	    					};
 
 	    					accChange();
@@ -59,15 +58,14 @@ SensorTag.discoverAll(function(sensorTag) {
 	    					var milisecond = date.getMilliseconds();
 	    					var nowTime = hour + ":" + minute + ":" + second + ":" + milisecond;
 	    					var nowDate = year + "-" + month + "-" + day;
-	    					var tempData = nowTime + "," + obj + "," + amb + "," + nowDate;
+	    					var tempData = nowTime + "," + obj + "," + amb + "," + nowDate+ "\n";
 
 	    					function tempChange() {
-	    						fs.writeFile('./csv/tempData1.csv', tempData);
-	    						//console.log("temp1 log start");
-	    					
-	    				    };
-	    				tempChange();
-	    			    })
+	    						fs.appendFile('./csv/tempData1.csv', tempData)
+	    					};
+
+	    					tempChange();
+	    				})
 	    				sensorTag.notifyIrTemperature(function() {
 	    					console.log(">SensorTag1 temperature is on");
 	    				});
@@ -77,7 +75,7 @@ SensorTag.discoverAll(function(sensorTag) {
 	    			console.log("null");
 	    		}
 
-	    		if(systemId == '5c:31:3e:00:00:bf:e8:7a') {
+	    		if(systemId == '5c:31:3e:00:00:bf:e8:7a' && error == error) {
 	    			sensorTag.enableAccelerometer(function() {
 	    				sensorTag.setAccelerometerPeriod(5, function() {
 	    				})
@@ -94,13 +92,12 @@ SensorTag.discoverAll(function(sensorTag) {
 	    					var milisecond = date.getMilliseconds();
 	    					var nowTime = hour + ":" + minute + ":" + second + ":" + milisecond;
 	    					var nowDate = year + "-" + month + "-" + day;
-	    					var accData = nowTime + "," +  x + "," + y + "," +  z + "," + nowDate;
+	    					var accData = nowTime + "," +  x + "," + y + "," +  z + "," + nowDate+ "\n";
 
 
 	    					
 	    					function accChange() {
-	    						fs.writeFile('./csv/accData2.csv', accData);
-	    						//console.log("acc2 log start");
+	    						fs.appendFile('./csv/accData2.csv', accData)
 	    					};
 
 	    					accChange();
@@ -126,13 +123,12 @@ SensorTag.discoverAll(function(sensorTag) {
 	    					var milisecond = date.getMilliseconds();
 	    					var nowTime = hour + ":" + minute + ":" + second + ":" + milisecond;
 	    					var nowDate = year + "-" + month + "-" + day;
-	    					var tempData = nowTime + "," + obj + "," + amb + "," + nowDate;
+	    					var tempData = nowTime + "," + obj + "," + amb + "," + nowDate+ "\n";
 
 	    					function tempChange() {
-	    						fs.writeFile('./csv/tempData2.csv', tempData);
-	    						//console.log("temp2 log start");
-	    					
-	    				    };
+	    						fs.appendFile('./csv/tempData2.csv', tempData)
+	    					};
+
 	    					tempChange();
 	    				})
 
