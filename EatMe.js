@@ -43,7 +43,7 @@ SensorTag.discoverAll(function(sensorTag) {
 	    				tempChange();
 	    			    })
 	    				sensorTag.notifyIrTemperature(function() {
-	    					console.log("> temperature is on");
+	    					console.log(">SensorTag1 temperature is on");
 	    				});
 	    			});
 
@@ -85,10 +85,10 @@ SensorTag.discoverAll(function(sensorTag) {
 	    				})
 
 	    				sensorTag.notifyIrTemperature(function() {
-	    					console.log("> temperature is on");
+	    					console.log(">SensorTag2 temperature is on");
 	    				});
 	    			});
-	    			
+
 	    		}else{
 	    			console.log("null");
 	    		}
