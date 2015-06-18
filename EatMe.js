@@ -17,15 +17,15 @@ SensorTag.discoverAll(function(sensorTag) {
 	    			sensorTag.on('accelerometerChange', function(x, y, z){
 	    				
 	    				function accChange() {
-		            	exports.accX_1 = x;
-		            	exports.accY_1 = y;
-		            	exports.accZ_1 = z;
+		            	console.log("x1 : " + x);
+		            	console.log("y1 : " + y);
+		            	console.log("z1 : " + z);
 		                };
 
 		            accChange();
 		            })
 	    			sensorTag.notifyAccelerometer(function() {
-                    console.log("> accelerometer is on");
+                    console.log(">SensorTag1 accelerometer is on");
                     });
                     });
 	    			
@@ -36,16 +36,17 @@ SensorTag.discoverAll(function(sensorTag) {
 	    				sensorTag.on('irTemperatureChange', function(obj, amb){
 
 	    					function tempChange() {
-	    						exports.obj_1 = obj;
-	    						exports.amb_1 = amb;
-	    					};
-	    					tempChange();
-	    				})
-
+	    						console.log("obj1 : " + obj);
+	    						console.log("amb1 : "  + amb);
+	    					
+	    				    };
+	    				tempChange();
+	    			    })
 	    				sensorTag.notifyIrTemperature(function() {
 	    					console.log("> temperature is on");
 	    				});
 	    			});
+
 	    		}else{
 	    			console.log("null");
 	    		}
@@ -58,15 +59,15 @@ SensorTag.discoverAll(function(sensorTag) {
 	    			sensorTag.on('accelerometerChange', function(x, y, z){
 	    				
 	    				function accChange() {
-		            	exports.accX_2 = x;
-		            	exports.accY_2 = y;
-		            	exports.accZ_2 = z;
+		            	console.log("x2 : " + x);
+		            	console.log("y2 : " + y);
+		            	console.log("z2 : " + z);
 		                };
 
 		            accChange();
 		            })
 	    			sensorTag.notifyAccelerometer(function() {
-                    console.log("> accelerometer is on");
+                    console.log(">SensorTag2 accelerometer is on");
                     });
                     });
 	    			
@@ -77,8 +78,8 @@ SensorTag.discoverAll(function(sensorTag) {
 	    				sensorTag.on('irTemperatureChange', function(obj, amb){
 
 	    					function tempChange() {
-	    						exports.obj_2 = obj;
-	    						exports.amb_2 = amb;
+	    						console.log("obj2 : " + obj);
+	    						console.log("amb2 : " + amb);
 	    					};
 	    					tempChange();
 	    				})
@@ -87,6 +88,7 @@ SensorTag.discoverAll(function(sensorTag) {
 	    					console.log("> temperature is on");
 	    				});
 	    			});
+	    			
 	    		}else{
 	    			console.log("null");
 	    		}
