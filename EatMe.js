@@ -10,7 +10,7 @@ SensorTag.discoverAll(function(sensorTag) {
 
 	    sensorTag.discoverServicesAndCharacteristics(function() {
 	    	sensorTag.readSystemId(function(error, systemId){
-	    		if(systemId == '5c:31:3e:00:00:bf:fc:15' && error == error) {
+	    		if(systemId == '5c:31:3e:00:00:bf:fc:15') {
 	    			sensorTag.enableAccelerometer(function() {
 	    				sensorTag.setAccelerometerPeriod(5, function() {
 	    				})
@@ -72,10 +72,10 @@ SensorTag.discoverAll(function(sensorTag) {
 	    			});
 
 	    		}else{
-	    			console.log("null");
+	    			console.log("SensorTag1 null");
 	    		}
 
-	    		if(systemId == '5c:31:3e:00:00:bf:e8:7a' && error == error) {
+	    		if(systemId == '5c:31:3e:00:00:bf:e8:7a') {
 	    			sensorTag.enableAccelerometer(function() {
 	    				sensorTag.setAccelerometerPeriod(5, function() {
 	    				})
@@ -138,7 +138,7 @@ SensorTag.discoverAll(function(sensorTag) {
 	    			});
 
 	    		}else{
-	    			console.log("null");
+	    			console.log("SensorTag2 null");
 	    		}
 	    	});
 	    });
