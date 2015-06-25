@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>E45C33D6-0291-4E2E-B58D-EEBD9AADD4C1</string>
+	<key>IDESourceControlProjectName</key>
+	<string>project</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>F494B7C837FB1EFE232862A98ED8C5FDA5546490</key>
+		<string>https://github.com/mario031/EatMe.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>EatMe/EatMe.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>F494B7C837FB1EFE232862A98ED8C5FDA5546490</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/mario031/EatMe.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>F494B7C837FB1EFE232862A98ED8C5FDA5546490</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>F494B7C837FB1EFE232862A98ED8C5FDA5546490</string>
+			<key>IDESourceControlWCCName</key>
+			<string>EatMe</string>
+		</dict>
+	</array>
+</dict>
+</plist>
