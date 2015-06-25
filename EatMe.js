@@ -1,26 +1,21 @@
 var SensorTag = require('sensortag');
 var mongoose = require('mongoose');
 
-var EatSchema = new mongoose.Schema({
-  id1:String,
-  id2:String,
-  date1:Date,
-  date2:Date
-});
 
-var Eat = mongoose.model('Eat', EatSchema);
+
+var EatSchema = new mongoose.Schema({
+  id1:{type:String},
+  id2:{type:String},
+  date1:{type:Date},
+  date2:{type:Date}
+});
+mongoose.model('Eat', EatSchema);
 
 // mongodbに接続
-mongoose.connect('mongodb://localhost/eatme', // memoの部分はデータベース名
-  // コールバックでエラー時の処理が書けるみたい。
-  function(err) {
-    if (err) {
-      console.log(err);
-    } else {
-      console.log('connection success!');
-    }
-  }
-);
+var eatme = mongoose.connect('mongodb://localhost/eatme');
+var Eat = eatme.model('Eat');
+
+
 
 //function onDiscover(sensorTag){
 
@@ -39,42 +34,42 @@ SensorTag.discoverAll(function(sensorTag) {
 	    			sensorTag.on('accelerometerChange', function(x, y, z){
 	    				
 	    				function accChange() {
-	    					if()
-	    					Eat.save.(function(err){
-	    						if(err){
+	    					if(x < -2 || 2 < x){
+	    						var eat = new Eat();
+		            		    eat.id1 = '5c:31:3e:00:00:bf:fc:15';
+		            		    eat.date1 = Date.now();
+		            		    eat.save(function(err){
+	    						   if(err){
 	    							console.log('save error!');
-	    						}else{
-	    							var eat = new Eat();
-	    							eat.id1 = '5c:31:3e:00:00:bf:fc:15';
-	    							eat.date1 = new Date();
-	    						}
-	    					});
+	    						   }
+	    					    });
+	    					}    					
 		                };
 
 		            accChange();
 		            })
 	    			sensorTag.notifyAccelerometer(function() {
-                    console.log("> accelerometer is on");
+                    console.log("> accelerometer1 is on");
                     });
                     });
 	    			
-	    			sensorTag.enableIrTemperature(function() {
-	    				sensorTag.setIrTemperaturePeriod(5, function() {
-	    				})
+	    			// sensorTag.enableIrTemperature(function() {
+	    			// 	sensorTag.setIrTemperaturePeriod(5, function() {
+	    			// 	})
 
-	    				sensorTag.on('irTemperatureChange', function(obj, amb){
+	    			// 	sensorTag.on('irTemperatureChange', function(obj, amb){
 
-	    					function tempChange() {
-	    						exports.obj_1 = obj;
-	    						exports.amb_1 = amb;
-	    					};
-	    					tempChange();
-	    				})
+	    			// 		function tempChange() {
+	    			// 			exports.obj_1 = obj;
+	    			// 			exports.amb_1 = amb;
+	    			// 		};
+	    			// 		tempChange();
+	    			// 	})
 
-	    				sensorTag.notifyIrTemperature(function() {
-	    					console.log("> temperature is on");
-	    				});
-	    			});
+	    			// 	sensorTag.notifyIrTemperature(function() {
+	    			// 		console.log("> temperature is on");
+	    			// 	});
+	    			// });
 	    		}else{
 	    			console.log("null");
 	    		}
@@ -87,35 +82,42 @@ SensorTag.discoverAll(function(sensorTag) {
 	    			sensorTag.on('accelerometerChange', function(x, y, z){
 	    				
 	    				function accChange() {
-		            	exports.accX_2 = x;
-		            	exports.accY_2 = y;
-		            	exports.accZ_2 = z;
+		            	    if(x < -2 || 2 < x){
+		            		    var eat = new Eat();
+		            		    eat.id2 = '5c:31:3e:00:00:bf:e8:7a';
+		            		    eat.date2 = Date.now();
+		            		    eat.save(function(err){
+	    						    if(err){
+	    							    console.log('save error!');
+	    						    }
+	    					    });
+	    					}    
 		                };
 
 		            accChange();
 		            })
 	    			sensorTag.notifyAccelerometer(function() {
-                    console.log("> accelerometer is on");
+                    console.log("> accelerometer2 is on");
                     });
                     });
 	    			
-	    			sensorTag.enableIrTemperature(function() {
-	    				sensorTag.setIrTemperaturePeriod(5, function() {
-	    				})
+	    			// sensorTag.enableIrTemperature(function() {
+	    			// 	sensorTag.setIrTemperaturePeriod(5, function() {
+	    			// 	})
 
-	    				sensorTag.on('irTemperatureChange', function(obj, amb){
+	    			// 	sensorTag.on('irTemperatureChange', function(obj, amb){
 
-	    					function tempChange() {
-	    						exports.obj_2 = obj;
-	    						exports.amb_2 = amb;
-	    					};
-	    					tempChange();
-	    				})
+	    			// 		function tempChange() {
+	    			// 			exports.obj_2 = obj;
+	    			// 			exports.amb_2 = amb;
+	    			// 		};
+	    			// 		tempChange();
+	    			// 	})
 
-	    				sensorTag.notifyIrTemperature(function() {
-	    					console.log("> temperature is on");
-	    				});
-	    			});
+	    			// 	sensorTag.notifyIrTemperature(function() {
+	    			// 		console.log("> temperature is on");
+	    			// 	});
+	    			// });
 	    		}else{
 	    			console.log("null");
 	    		}
@@ -123,3 +125,8 @@ SensorTag.discoverAll(function(sensorTag) {
 	    });
     });
 });
+
+// Eat.find({}, function(err, res) {
+//   console.log(res);
+// });
+
