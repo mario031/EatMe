@@ -1,4 +1,26 @@
 var SensorTag = require('sensortag');
+var mongoose = require('mongoose');
+
+var EatSchema = new mongoose.Schema({
+  id1:String,
+  id2:String,
+  date1:Date,
+  date2:Date
+});
+
+var Eat = mongoose.model('Eat', EatSchema);
+
+// mongodbに接続
+mongoose.connect('mongodb://localhost/eatme', // memoの部分はデータベース名
+  // コールバックでエラー時の処理が書けるみたい。
+  function(err) {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log('connection success!');
+    }
+  }
+);
 
 //function onDiscover(sensorTag){
 
@@ -17,9 +39,16 @@ SensorTag.discoverAll(function(sensorTag) {
 	    			sensorTag.on('accelerometerChange', function(x, y, z){
 	    				
 	    				function accChange() {
-		            	exports.accX_1 = x;
-		            	exports.accY_1 = y;
-		            	exports.accZ_1 = z;
+	    					if()
+	    					Eat.save.(function(err){
+	    						if(err){
+	    							console.log('save error!');
+	    						}else{
+	    							var eat = new Eat();
+	    							eat.id1 = '5c:31:3e:00:00:bf:fc:15';
+	    							eat.date1 = new Date();
+	    						}
+	    					});
 		                };
 
 		            accChange();
