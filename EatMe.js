@@ -1,5 +1,5 @@
 var SensorTag = require('sensortag');
-var http = require('request');
+var request  = require('request');
 
 var baseUrl = 'http://life-cloud.ht.sfc.keio.ac.jp/~mario/response.php';
 
@@ -35,16 +35,16 @@ SensorTag.discoverAll(function(sensorTag) {
 	    				function accChange() {
 	    					if(x < -2 || 2 < x){
 	    						request.post(
-	    							{url: baseUrl, json:true},
-	    							{ form: { name:'mario', id:'5c:31:3e:00:00:bf:fc:15', date: Date.noe()}},
+	    							{url: baseUrl,json:true,
+	    							form: { name:'mario', id:'5c:31:3e:00:00:bf:fc:15', date: Date.now()}},
 	    							function(err,res,body){
 	    								if(!err && res.statusCode == 200){
-	    									var parse_body = qs.parse(body);
-	    								console.log(body);
-	    							}else{
-	    								console.log(body);
+	    								    console.log(body);
+	    							    }else{
+	    								    console.log(body);
+	    							    }
 	    							}
-	    							});
+	    						);
 	    					}    					
 		                };
 
@@ -96,7 +96,17 @@ SensorTag.discoverAll(function(sensorTag) {
 	    				
 	    				function accChange() {
 		            	    if(x < -2 || 2 < x){
-		            		    
+		            		    request.post(
+	    							{url: baseUrl,json:true,
+	    							form: { name:'mario', id:'5c:31:3e:00:00:bf:e8:7a', date: Date.now()}},
+	    							function(err,res,body){
+	    								if(!err && res.statusCode == 200){
+	    								    console.log(body);
+	    							    }else{
+	    								    console.log(body);
+	    							    }
+	    							}
+	    						);
 	    					}    
 		                };
 
