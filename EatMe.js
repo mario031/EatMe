@@ -72,8 +72,6 @@ SensorTag.discoverAll(function(sensorTag) {
 	    			// 		console.log("> temperature is on");
 	    			// 	});
 	    			// });
-	    		}else{
-	    			console.log("null");
 	    		}
 
 	    		if(systemId == '5c:31:3e:00:00:bf:e8:7a') {
@@ -134,8 +132,6 @@ SensorTag.discoverAll(function(sensorTag) {
 	    			// 		console.log("> temperature is on");
 	    			// 	});
 	    			// });
-	    		}else{
-	    			console.log("null");
 	    		}
 	    	});
 	    });
