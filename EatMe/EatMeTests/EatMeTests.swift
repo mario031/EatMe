@@ -2,7 +2,7 @@
 //  EatMeTests.swift
 //  EatMeTests
 //
-//  Created by 石川伶 on 2015/06/26.
+//  Created by 石川伶 on 2015/07/02.
 //  Copyright (c) 2015年 石川伶. All rights reserved.
 //
 

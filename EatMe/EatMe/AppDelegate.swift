@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  EatMe
 //
-//  Created by 石川伶 on 2015/06/26.
+//  Created by 石川伶 on 2015/07/02.
 //  Copyright (c) 2015年 石川伶. All rights reserved.
 //
 
@@ -16,6 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
         return true
     }
 
@@ -35,7 +36,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidBecomeActive(application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-        
     }
 
     func applicationWillTerminate(application: UIApplication) {

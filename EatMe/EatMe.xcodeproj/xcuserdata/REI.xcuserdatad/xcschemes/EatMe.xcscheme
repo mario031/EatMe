@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0630"
+   LastUpgradeVersion = "0640"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B10FD0F61B3C79F800DEFFF5"
+               BlueprintIdentifier = "B1279D4A1B456CA5008CAE92"
                BuildableName = "EatMe.app"
                BlueprintName = "EatMe"
                ReferencedContainer = "container:EatMe.xcodeproj">
@@ -28,7 +28,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B10FD10B1B3C79F800DEFFF5"
+               BlueprintIdentifier = "B1279D5F1B456CA5008CAE92"
                BuildableName = "EatMeTests.xctest"
                BlueprintName = "EatMeTests"
                ReferencedContainer = "container:EatMe.xcodeproj">
@@ -46,7 +46,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B10FD10B1B3C79F800DEFFF5"
+               BlueprintIdentifier = "B1279D5F1B456CA5008CAE92"
                BuildableName = "EatMeTests.xctest"
                BlueprintName = "EatMeTests"
                ReferencedContainer = "container:EatMe.xcodeproj">
@@ -56,7 +56,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B10FD0F61B3C79F800DEFFF5"
+            BlueprintIdentifier = "B1279D4A1B456CA5008CAE92"
             BuildableName = "EatMe.app"
             BlueprintName = "EatMe"
             ReferencedContainer = "container:EatMe.xcodeproj">
@@ -76,7 +76,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B10FD0F61B3C79F800DEFFF5"
+            BlueprintIdentifier = "B1279D4A1B456CA5008CAE92"
             BuildableName = "EatMe.app"
             BlueprintName = "EatMe"
             ReferencedContainer = "container:EatMe.xcodeproj">
@@ -95,7 +95,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B10FD0F61B3C79F800DEFFF5"
+            BlueprintIdentifier = "B1279D4A1B456CA5008CAE92"
             BuildableName = "EatMe.app"
             BlueprintName = "EatMe"
             ReferencedContainer = "container:EatMe.xcodeproj">
