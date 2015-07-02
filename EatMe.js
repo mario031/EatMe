@@ -20,14 +20,15 @@ SensorTag.discoverAll(function(sensorTag) {
 	    				})
 
 	    			sensorTag.on('accelerometerChange', function(x, y, z){
-	    				var date = new Date();
-	    					var year = date.getFullYear();
-	    					var month = date.getMonth()+1;
-	    					var day = date.getDate();
-	    					var hour = date.getHours();
-	    					var minute = date.getMinutes();
-	    					var second = date.getSeconds();
-	    					var milisecond = date.getMilliseconds();
+	    				var date = new Date().getTime();
+	    				var realDate = new Date();
+	    					var year = realDate.getFullYear();
+	    					var month = realDate.getMonth()+1;
+	    					var day = realDate.getDate();
+	    					var hour = realDate.getHours();
+	    					var minute = realDate.getMinutes();
+	    					var second = realDate.getSeconds();
+	    					var milisecond = realDate.getMilliseconds();
 	    					var nowTime = hour + ":" + minute + ":" + second + ":" + milisecond;
 	    					var nowDate = year + "-" + month + "-" + day;
 	    					var accDate =  nowDate + ' ' + nowTime;
@@ -36,7 +37,7 @@ SensorTag.discoverAll(function(sensorTag) {
 	    					if(x < -2 || 2 < x){
 	    						request.post(
 	    							{url: baseUrl,json:true,
-	    							form: { name:'sensortag1', id:'5c:31:3e:00:00:bf:fc:15', date: accDate}},
+	    							form: { name:'sensortag1', id:'5c:31:3e:00:00:bf:fc:15', date: date, realDate: accDate}},
 	    							function(err,res,body){
 	    								if(!err && res.statusCode == 200){
 	    								    console.log('S1 post success');
@@ -80,14 +81,15 @@ SensorTag.discoverAll(function(sensorTag) {
 	    				})
 
 	    			sensorTag.on('accelerometerChange', function(x, y, z){
-	    				var date = new Date();
-	    					var year = date.getFullYear();
-	    					var month = date.getMonth()+1;
-	    					var day = date.getDate();
-	    					var hour = date.getHours();
-	    					var minute = date.getMinutes();
-	    					var second = date.getSeconds();
-	    					var milisecond = date.getMilliseconds();
+	    				var date = new Date().getTime();
+	    				var realDate = new Date();
+	    					var year = realDate.getFullYear();
+	    					var month = realDate.getMonth()+1;
+	    					var day = realDate.getDate();
+	    					var hour = realDate.getHours();
+	    					var minute = realDate.getMinutes();
+	    					var second = realDate.getSeconds();
+	    					var milisecond = realDate.getMilliseconds();
 	    					var nowTime = hour + ":" + minute + ":" + second + ":" + milisecond;
 	    					var nowDate = year + "-" + month + "-" + day;
 	    					var accDate =  nowDate + ' ' + nowTime;
@@ -96,7 +98,7 @@ SensorTag.discoverAll(function(sensorTag) {
 		            	    if(x < -2 || 2 < x){
 		            		    request.post(
 	    							{url: baseUrl,json:true,
-	    							form: { name:'sensortag2', id:'5c:31:3e:00:00:bf:e8:7a', date: accDate}},
+	    							form: { name:'sensortag2', id:'5c:31:3e:00:00:bf:e8:7a', date: date, realDate: accDate}},
 	    							function(err,res,body){
 	    								if(!err && res.statusCode == 200){
 	    								    console.log('S2 post success');
@@ -139,14 +141,15 @@ SensorTag.discoverAll(function(sensorTag) {
 	    				})
 
 	    			sensorTag.on('accelerometerChange', function(x, y, z){
-	    				var date = new Date();
-	    					var year = date.getFullYear();
-	    					var month = date.getMonth()+1;
-	    					var day = date.getDate();
-	    					var hour = date.getHours();
-	    					var minute = date.getMinutes();
-	    					var second = date.getSeconds();
-	    					var milisecond = date.getMilliseconds();
+	    				var date = new Date().getTime();
+	    				var realDate = new Date();
+	    					var year = realDate.getFullYear();
+	    					var month = realDate.getMonth()+1;
+	    					var day = realDate.getDate();
+	    					var hour = realDate.getHours();
+	    					var minute = realDate.getMinutes();
+	    					var second = realDate.getSeconds();
+	    					var milisecond = realDate.getMilliseconds();
 	    					var nowTime = hour + ":" + minute + ":" + second + ":" + milisecond;
 	    					var nowDate = year + "-" + month + "-" + day;
 	    					var accDate =  nowDate + ' ' + nowTime;
@@ -155,7 +158,7 @@ SensorTag.discoverAll(function(sensorTag) {
 		            	    if(x < -2 || 2 < x){
 		            		    request.post(
 	    							{url: baseUrl,json:true,
-	    							form: { name:'sensortag3', id:'5c:31:3e:00:00:bf:fa:70', date: accDate}},
+	    							form: { name:'sensortag3', id:'5c:31:3e:00:00:bf:fa:70', date: date, realDate: accDate}},
 	    							function(err,res,body){
 	    								if(!err && res.statusCode == 200){
 	    								    console.log('S3 post success');
@@ -196,8 +199,4 @@ SensorTag.discoverAll(function(sensorTag) {
 	    });
     });
 });
-
-// Eat.find({}, function(err, res) {
-//   console.log(res);
-// });
 
