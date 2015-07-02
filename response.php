@@ -13,4 +13,4 @@ $col = $db->selectCollection("eatmes");
 $col->save($post);
 //var_dump($post);
 
-include("find.php");
+//include("find.php");
