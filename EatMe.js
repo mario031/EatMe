@@ -60,7 +60,7 @@ SensorTag.discoverAll(function(sensorTag) {
 	    			// 	sensorTag.setIrTemperaturePeriod(5, function() {
 	    			// 	})
 
-	    			// 	sensorTag.on('irTemperatureChange', function(obj, amb){
+	    			// sensorTag.on('irTemperatureChange', function(obj, amb){
 
 	    			// 		function tempChange() {
 	    			// 			exports.obj_1 = obj;
