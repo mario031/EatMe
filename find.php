@@ -1,10 +1,6 @@
 <?php
-<<<<<<< HEAD
 //$get = $_GET;
 $cursor = array();
-=======
-$get = $_GET;
->>>>>>> 02138b3108bb7db8fc0d5b35e019f27949b970f7
 // DBへ接続
 $mongo = new MongoClient();
 // データベースを指定
@@ -15,7 +11,6 @@ $col = $db->selectCollection("eatmes");
 // 10分に一回monogoを覗きに行く
 // $w = new EvTimer(0., 600, NULL, function($w, $revents){
 // コレクションのドキュメントを全件取得
-<<<<<<< HEAD
 $sensorTag1 = array('name' => 'sensortag1');
 $sensorTag2 = array('name' => 'sensortag2');
 $sensorTag3 = array('name' => 'sensortag3');
@@ -60,13 +55,3 @@ if ($_COOKIE["key_1"] =! $cursor3(array('date')) ) {
 // });
 
 // Ev::run();
-=======
-$cursor = $col->find();
-
-$cursor->sort(array('date' => -1));
-$cursor->limit(1);
-// 表示
-foreach ($cursor as $id =>$obj) {
-	var_dump($obj);
-}
->>>>>>> 02138b3108bb7db8fc0d5b35e019f27949b970f7
