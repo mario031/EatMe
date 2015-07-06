@@ -7,12 +7,11 @@
 //
 
 import UIKit
-import Alamofire
 import SwiftyJSON
 
 class ViewController: UIViewController {
     private var myScrollView: UIScrollView!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -23,15 +22,27 @@ class ViewController: UIViewController {
         let myAppFrameSize: CGSize = UIScreen.mainScreen().applicationFrame.size
         let mylabel: UILabel = UILabel(frame: CGRectMake(10,40,myAppFrameSize.width,myAppFrameSize.height*2))
         
-        Alamofire.request(.GET, "http://life-cloud.ht.sfc.keio.ac.jp/~mario/find.php")
-            .responseString {(request, response, data, error) in
-                if (response?.statusCode == 200) {
-                    println("success")
-                    let json = JSON(data!)
-                    println(json)
-                    mylabel.text = "うごいたよ"
-                }
-        }
+        //NSTimer.scheduledTimerWithTimeInterval(5, target: self, selector: "update", userInfo: nil, repeats: true)
+        
+        var url = NSURL(string: "http://life-cloud.ht.sfc.keio.ac.jp/~mario/find.php")
+        let config = NSURLSessionConfiguration.defaultSessionConfiguration()
+        let session = NSURLSession(configuration: config)
+        var req = NSURLRequest(URL: url!)
+        
+        //NSURLSessionDownloadTask is retured from session.dataTaskWithRequest
+        var task = session.dataTaskWithRequest(req, completionHandler: {
+            (data, resp, err) in
+            var value: String = NSString(data:data, encoding:NSUTF8StringEncoding)! as String
+            println(value)
+//            mylabel.text = value
+//            mylabel.numberOfLines = 0
+//            mylabel.sizeToFit();
+        })
+        task.resume()
+
+//        func update(){
+//            get.resume()
+//        }
         
         myScrollView.addSubview(mylabel)
         myScrollView.contentSize = CGSizeMake(mylabel.frame.size.width, mylabel.frame.size.height)
@@ -41,7 +52,6 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
 }
+
 

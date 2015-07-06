@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>554F12D8-211D-4969-AD7B-7304B089637A</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>EatMe</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>F494B7C837FB1EFE232862A98ED8C5FDA5546490</key>
 		<string>https://github.com/mario031/EatMe.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>EatMe/EatMe.xcodeproj/project.xcworkspace</string>
+	<string>EatMe/EatMe.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>F494B7C837FB1EFE232862A98ED8C5FDA5546490</key>
