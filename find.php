@@ -12,7 +12,6 @@ $today = $date_now->format('Y-m-d H:i:s');
 
 // DBへ接続
 $mongo = new Mongo();
-
 // データベースを指定
 $db = $mongo->selectDB("eatme");
 // コレクションを指定1
@@ -46,10 +45,15 @@ if ($show_min_time2 > 1) {
 	echo "sensor2　うごいてないよー";
 }
 
-// $cursor3 = $col->find($sensorTag3);
+// $cursor3->find($sensorTag3);
 // $cursor3->sort(array('date' => -1));
 // $cursor3->limit(1);
-// if ($date2 =< $cursor3(array('formatted')) and $cursor3(array('formatted')) =< $date1) {
+// foreach ($cursor3 as $id => $tag3) {	
+// 	$time3 = (strtotime($today)) - (strtotime($tag3["realDate"]));
+// 	$show_min_time3 = floor($time3 / 60);
+// 	$show_min_time3 = $show_min_time3 % 60;
+// }
+// if ($show_min_time3 > 1) {
 // 	// 表示
 // 	echo "sensor3　うごいてないよー";
 // }
