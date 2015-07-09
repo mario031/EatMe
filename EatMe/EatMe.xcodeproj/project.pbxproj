@@ -175,6 +175,11 @@
 					B1279D4A1B456CA5008CAE92 = {
 						CreatedOnToolsVersion = 6.4;
 						DevelopmentTeam = RHNH48U726;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					B1279D5F1B456CA5008CAE92 = {
 						CreatedOnToolsVersion = 6.4;
@@ -345,6 +350,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
