@@ -13,16 +13,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-//    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-//        
+    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+//
 //    let settings = UIUserNotificationSettings(forTypes: UIUserNotificationType.Alert, categories: nil)
 //    UIApplication.sharedApplication().registerUserNotificationSettings(settings)
 //    UIApplication.sharedApplication().setMinimumBackgroundFetchInterval(UIApplicationBackgroundFetchIntervalMinimum)
 //        application.registerUserNotificationSettings(UIUserNotificationSettings(forTypes: UIUserNotificationType.Sound | UIUserNotificationType.Alert | UIUserNotificationType.Badge, categories: nil))
 //
-//    return true;
-//    }
-//    
+    return true;
+    }
+//
 //    func application(application: UIApplication, performFetchWithCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
 //        println("Complete");
 //        completionHandler(UIBackgroundFetchResult.NewData)
@@ -38,25 +38,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        // 通信のタスクを生成.
 //        let myTask = mySession.dataTaskWithURL(myUrl, completionHandler: {
 //            (data, response, err) in
+
 //            var localNotification:UILocalNotification = UILocalNotification()
 //            localNotification.alertAction = "OK"
 //            localNotification.alertBody = "動いてないよー"
 //            localNotification.fireDate = NSDate(timeIntervalSinceNow: 1)
 //            UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
+
 //            var eatme = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: nil) as! NSDictionary;
 //            var eatme_name: [NSDictionary]=[];
 //            eatme_name = eatme["name"] as! [NSDictionary];
-//
-//            
-//            // 帰ってきたデータを文字列に変換.
-//            var myData:NSString = NSString(data: data, encoding: NSUTF8StringEncoding)!
-//            
-//            var localNotification:UILocalNotification = UILocalNotification()
-//            localNotification.timeZone = NSTimeZone.defaultTimeZone()
-//            localNotification.alertAction = "OK"
-//            localNotification.alertBody = "動いてないよー"
-//            UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
-//            
+    
 //            var alert = UIAlertView();
 //            alert.title = "受け取りました";
 //            alert.message = localNotification.alertBody;

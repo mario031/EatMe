@@ -47,30 +47,30 @@ class ViewController: UIViewController,NSURLSessionDelegate,NSURLSessionDataDele
         myTask.resume()
         
     }
-        /*
-        通信が終了したときに呼び出されるデリゲート.
-        */
-        func URLSession(session: NSURLSession, dataTask: NSURLSessionDataTask, didReceiveData data: NSData) {
-            println("NSURLSessionDataTask")
+    /*
+    通信が終了したときに呼び出されるデリゲート.
+    */
+    func URLSession(session: NSURLSession, dataTask: NSURLSessionDataTask, didReceiveData data: NSData) {
+        println("NSURLSessionDataTask")
         
-            // 帰ってきたデータを文字列に変換.
-            var myData:NSString = NSString(data: data, encoding: NSUTF8StringEncoding)!
-            
-            // バックグラウンドだとUIの処理が出来ないので、メインスレッドでUIの処理を行わせる.
-            dispatch_async(dispatch_get_main_queue(), {
-                self.myTextView.text = myData as String
-//                self.showNotification1()
-            })
+        // 帰ってきたデータを文字列に変換.
+        var myData:NSString = NSString(data: data, encoding: NSUTF8StringEncoding)!
         
-        }
-        /*
-        バックグラウンドからフォアグラウンドの復帰時に呼び出されるデリゲート.
-        */
-        func URLSessionDidFinishEventsForBackgroundURLSession(session: NSURLSession) {
-            println("URLSessionDidFinishEventsForBackgroundURLSession")
-        }
+        // バックグラウンドだとUIの処理が出来ないので、メインスレッドでUIの処理を行わせる.
+        dispatch_async(dispatch_get_main_queue(), {
+            self.myTextView.text = myData as String
+            //                self.showNotification1()
+        })
+        
+    }
+    /*
+    バックグラウンドからフォアグラウンドの復帰時に呼び出されるデリゲート.
+    */
+    func URLSessionDidFinishEventsForBackgroundURLSession(session: NSURLSession) {
+        println("URLSessionDidFinishEventsForBackgroundURLSession")
+    }
     
-//    一定時間毎に更新
+    //    一定時間毎に更新
     func update(){
         viewDidLoad()
     }
@@ -79,7 +79,7 @@ class ViewController: UIViewController,NSURLSessionDelegate,NSURLSessionDataDele
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
 }
 
 
