@@ -6,10 +6,6 @@ var baseUrl = 'http://life-cloud.ht.sfc.keio.ac.jp/~mario/response.php';
 
 
 
-//function onDiscover(sensorTag){
-
-//}
-
 SensorTag.discoverAll(function(sensorTag) {
 	sensorTag.connect(function() {
 
@@ -17,7 +13,7 @@ SensorTag.discoverAll(function(sensorTag) {
 	    	sensorTag.readSystemId(function(error, systemId){
 	    		if(systemId == '5c:31:3e:00:00:bf:fc:15') {
 	    			sensorTag.enableAccelerometer(function() {
-	    				sensorTag.setAccelerometerPeriod(5, function() {
+	    				sensorTag.setAccelerometerPeriod(10, function() {
 	    				})
 
 	    			sensorTag.on('accelerometerChange', function(x, y, z){
@@ -44,19 +40,18 @@ SensorTag.discoverAll(function(sensorTag) {
 		            accChange();
 		            })
 	    			sensorTag.notifyAccelerometer(function() {
-                    console.log("> accelerometer1 is on");
+	    				console.log("> accelerometer1 is on");
                     });
                     });
 	    			
 	    			// sensorTag.enableIrTemperature(function() {
-	    			// 	sensorTag.setIrTemperaturePeriod(5, function() {
+	    			// 	sensorTag.setIrTemperaturePeriod(10, function() {
 	    			// 	})
 
 	    			// sensorTag.on('irTemperatureChange', function(obj, amb){
 
 	    			// 		function tempChange() {
-	    			// 			exports.obj_1 = obj;
-	    			// 			exports.amb_1 = amb;
+	    			// 			console.log();
 	    			// 		};
 	    			// 		tempChange();
 	    			// 	})
@@ -69,7 +64,7 @@ SensorTag.discoverAll(function(sensorTag) {
 
 	    		if(systemId == '5c:31:3e:00:00:bf:e8:7a') {
 	    			sensorTag.enableAccelerometer(function() {
-	    				sensorTag.setAccelerometerPeriod(5, function() {
+	    				sensorTag.setAccelerometerPeriod(10, function() {
 	    				})
 
 	    			sensorTag.on('accelerometerChange', function(x, y, z){
@@ -96,12 +91,12 @@ SensorTag.discoverAll(function(sensorTag) {
 		            accChange();
 		            })
 	    			sensorTag.notifyAccelerometer(function() {
-                    console.log("> accelerometer2 is on");
+	    				console.log("> accelerometer2 is on");
                     });
                     });
 	    			
 	    			// sensorTag.enableIrTemperature(function() {
-	    			// 	sensorTag.setIrTemperaturePeriod(5, function() {
+	    			// 	sensorTag.setIrTemperaturePeriod(10, function() {
 	    			// 	})
 
 	    			// 	sensorTag.on('irTemperatureChange', function(obj, amb){
@@ -120,7 +115,7 @@ SensorTag.discoverAll(function(sensorTag) {
 	    		}
 	    		if(systemId == '5c:31:3e:00:00:bf:fa:70') {
 	    			sensorTag.enableAccelerometer(function() {
-	    				sensorTag.setAccelerometerPeriod(5, function() {
+	    				sensorTag.setAccelerometerPeriod(10, function() {
 	    				})
 
 	    			sensorTag.on('accelerometerChange', function(x, y, z){
@@ -147,12 +142,12 @@ SensorTag.discoverAll(function(sensorTag) {
 		            accChange();
 		            })
 	    			sensorTag.notifyAccelerometer(function() {
-                    console.log("> accelerometer3 is on");
+	    				console.log("> accelerometer3 is on");
                     });
                     });
 	    			
 	    			// sensorTag.enableIrTemperature(function() {
-	    			// 	sensorTag.setIrTemperaturePeriod(5, function() {
+	    			// 	sensorTag.setIrTemperaturePeriod(10, function() {
 	    			// 	})
 
 	    			// 	sensorTag.on('irTemperatureChange', function(obj, amb){
