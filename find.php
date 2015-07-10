@@ -4,6 +4,10 @@ $sensorTag1 = array('name' => 'sensortag1');
 $sensorTag2 = array('name' => 'sensortag2');
 $sensorTag3 = array('name' => 'sensortag3');
 
+$message = array('僕を食べてー', '動いてないよー', '腐っちゃうよー', '忘れないでくれー');
+$message_sent1 = $message[rand(0,3)];
+$message_sent2 = $message[rand(0,3)];
+
 $date_now = new DateTime();
 $date_now->setTimeZone(new DateTimeZone('Asia/Tokyo'));
 $today = $date_now->format('Y-m-d H:i:s');
@@ -27,9 +31,9 @@ foreach ($cursor1 as $id => $tag1) {
 	$show_min_time1 = floor($time1 / 60);
 	$show_min_time1 = $show_min_time1 % 60;
 }
-if ($show_min_time1 > 1) {
+if ($show_min_time1 > 1440) {
 	// 表示
-	echo "sensor1　うごいてないよー\n";
+	echo " sensor1  $message_sent1\n\n";
 }
 
 $cursor2 = $col->find($sensorTag2);
@@ -40,9 +44,9 @@ foreach ($cursor2 as $id => $tag2) {
 	$show_min_time2 = floor($time2 / 60);
 	$show_min_time2 = $show_min_time2 % 60;
 }
-if ($show_min_time2 > 1) {
+if ($show_min_time2 > 1440) {
 	// 表示
-	echo "sensor2　うごいてないよー";
+	echo " sensor2  $message_sent2";
 }
 
 // $cursor3->find($sensorTag3);
